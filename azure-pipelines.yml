@@ -39,8 +39,7 @@ extends:
         displayName: Phase 1
         cancelTimeoutInMinutes: 1
         pool:
-          name: 1ES-OSE-Pool
-          image: 1ES-OSE-Hosted-Pool-windows
+          name: 1ESPtTfsAgentBuildPool1
           os: windows
         steps:
         - checkout: self
