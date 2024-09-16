@@ -40,6 +40,7 @@ extends:
         cancelTimeoutInMinutes: 1
         pool:
           name: 1ESPtTfsAgentBuildPool1
+          os: windows
         steps:
         - checkout: self
           clean: true
