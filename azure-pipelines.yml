@@ -29,7 +29,9 @@ extends:
     sdl:
       sourceAnalysisPool: 1ESPtTfsAgentBuildPoolSDL
     pool:
-      name: 1ESPtTfsAgentBuildPool1
+      name: Azure-Pipelines-1ESPT-ExDShared
+      image: windows-2022
+      os: windows
     customBuildTags:
     - ES365AIMigrationTooling
     stages:
@@ -39,8 +41,7 @@ extends:
         displayName: Phase 1
         cancelTimeoutInMinutes: 1
         pool:
-          name: 1ESPtTfsAgentBuildPool1
-          os: windows
+          name: 1ES-Shared-Hosted-Pool_Windows-Server-2022
         steps:
         - checkout: self
           clean: true
