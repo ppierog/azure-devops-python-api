@@ -56,7 +56,7 @@ extends:
               .\scripts\windows\init.ps1 if ($LASTEXITCODE -ne 0) {
                 Write-Host "##vso[task.logissue type=error;] init script failed."
                 Exit $LASTEXITCODE
-              } & python -m pip install -U pip setuptools
+              } "&" python -m pip install -U pip setuptools
         - task: Bash@3
           name: ShellScript1
           displayName: Update Version
