@@ -147,4 +147,4 @@ extends:
               .\scripts\windows\init.ps1 if ($LASTEXITCODE -ne 0) {
                 Write-Host "##vso[task.logissue type=error;] init script failed."
                 Exit $LASTEXITCODE
-              } & python -m compileall .
+              } "&" python -m compileall .
