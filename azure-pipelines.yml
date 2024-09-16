@@ -39,8 +39,7 @@ extends:
         displayName: Phase 1
         cancelTimeoutInMinutes: 1
         pool:
-          name: Azure Pipelines
-          vmImage: windows-2022
+          name: 1ESPtTfsAgentBuildPool1
         steps:
         - checkout: self
           clean: true
