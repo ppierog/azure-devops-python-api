@@ -106,7 +106,7 @@ class Connection(object):
             location_client = LocationClient(self.base_url, self._creds)
             if self.use_fiddler:
                 self._configure_client_for_fiddler(location_client)
-            if not force and RESOURCE_FILE_CACHE[location_client.normalized_url]:
+            if False and not force and RESOURCE_FILE_CACHE[location_client.normalized_url]:
                 try:
                     logger.debug('File cache hit for resources on: %s', location_client.normalized_url)
                     self._resource_areas = location_client._base_deserialize.deserialize_data(
@@ -124,7 +124,7 @@ class Connection(object):
             try:
                 serialized = location_client._base_serialize.serialize_data(self._resource_areas,
                                                                             '[ResourceAreaInfo]')
-                RESOURCE_FILE_CACHE[location_client.normalized_url] = serialized
+                #RESOURCE_FILE_CACHE[location_client.normalized_url] = serialized
             except Exception as ex:
                 logger.debug(ex, exc_info=True)
         return self._resource_areas

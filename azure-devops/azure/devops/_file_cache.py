@@ -125,7 +125,7 @@ def get_cache_dir():
 
 
 DEFAULT_MAX_AGE = 3600 * 12  # 12 hours
-DEFAULT_CACHE_DIR = get_cache_dir()
+DEFAULT_CACHE_DIR = ""#get_cache_dir()
 
 
 def get_cache(name, max_age=DEFAULT_MAX_AGE, cache_dir=DEFAULT_CACHE_DIR):
@@ -133,8 +133,8 @@ def get_cache(name, max_age=DEFAULT_MAX_AGE, cache_dir=DEFAULT_CACHE_DIR):
     return FileCache(file_name, max_age)
 
 
-OPTIONS_CACHE = get_cache('options')
-RESOURCE_CACHE = get_cache('resources')
+OPTIONS_CACHE = {}#get_cache('options')
+RESOURCE_CACHE = {}#get_cache('resources')
 
 
 # Code below this point from azure-cli-core

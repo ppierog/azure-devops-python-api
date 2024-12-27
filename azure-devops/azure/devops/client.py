@@ -183,7 +183,7 @@ class Client(object):
             return self._locations[url]
 
         # Next check for options cached on disk
-        if not all_host_types and OPTIONS_FILE_CACHE[url]:
+        if False  and not all_host_types and OPTIONS_FILE_CACHE[url]:
             try:
                 logger.debug('File cache hit for options on: %s', url)
                 self._locations[url] = self._base_deserialize.deserialize_data(OPTIONS_FILE_CACHE[url],
@@ -217,7 +217,8 @@ class Client(object):
         else:
             self._locations[url] = returned_locations
             try:
-                OPTIONS_FILE_CACHE[url] = wrapper.value
+                pass
+                #OPTIONS_FILE_CACHE[url] = wrapper.value
             except SerializationError as ex:
                 logger.debug(ex, exc_info=True)
         return returned_locations
